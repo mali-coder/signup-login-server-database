@@ -1,0 +1,19 @@
+block nav
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        .logo
+            a(href='/')
+                img(src='../assets/images/logo-shop.png' alt='LackyOne LOGO')
+                span LackyOne
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarColor01.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item.active
+                    a.nav-link(href='/') Home 
+                        span.sr-only (current) 
+                li.nav-item
+                    a.nav-link.disabled(href='/booking') Bookings
+                li.nav-item
+                    a.nav-link(href='/pricing') Pricing
+                li.nav-item
+                    a.nav-link(href='/about') About

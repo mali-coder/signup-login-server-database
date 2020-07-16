@@ -1,0 +1,30 @@
+extends base
+
+block append style
+    style 
+        include ../assets/style/home.css
+
+    script(src='../assets/scripts/login.js')
+
+block nav
+    include nav-logout
+
+block content
+    .alert.alert-success.alert-dismissible.fade.show(role='alert')
+        strong Account has been created successfully. Proceed to login!!
+        button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;   
+
+    .container
+        .row
+            .col-lg-12.col-md-12.col-sm-12
+                .container.border-custom
+                    .lisu
+                        h2 Login to your account
+                        form#login-form(action='/login')
+                            .form-group.my-4
+                                input#lemail.form-control(type='email' name='lemail' aria-describedby='emailHelp' placeholder='Enter valid email' required='')
+                            .form-group.my-4
+                                input#lpass.form-control(type='password' name='lpass' placeholder='Enter Password' required='')
+                            div
+                                button#log-btn.btn.btn-primary(type='submit') Login

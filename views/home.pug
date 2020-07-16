@@ -1,0 +1,53 @@
+extends base
+
+
+block append style
+    style 
+        include ../assets/style/home.css
+    script(src='../assets/scripts/index.js')
+
+block nav
+    include nav-logout
+
+block content
+    #server-alert.alert.alert-warning.disp-none(role='alert')
+        strong Can't Login or signup right now. Server down!
+        button#server-alert-btn.close
+            span(aria-hidden='true') &times;
+
+    .container
+        .row
+            .col-lg-6.col-md-12.col-sm-12
+                .container.border-custom
+                    .lisu
+                        h2 Login to an existing acount
+                        form#login-form(action='/login')
+                            .inputs#login-inputs
+                                .form-group.my-2
+                                    input#lemail.form-control(type='email' name='lemail' aria-describedby='emailHelp' placeholder='Enter valid email' required='')
+                                    p.disp-none.text-danger#wrong-email Email you entered is not registered
+                                .form-group.my-2
+                                    input#lpass.form-control(type='password' name='lpass' placeholder='Enter Password' required='')
+                                    p.disp-none.text-danger#wrong-pass #[strong Wrong password!] Enter correct password
+                                div.my-2
+                                    button#log-btn.btn.btn-primary(type='submit') Login
+                            p.disp-none.text-danger#login-form-alert Please fill all the fields first!!
+            .col-lg-6.col-md-12.col-sm-12
+                .container.border-custom
+                    .lisu
+                        h2 Create a new account
+                        form#signup-form(action='/signup')
+                            .inputs#signup-inputs
+                                .form-group.my-2
+                                    input#name.form-control(type='text' name='name' placeholder='Enter your name' required='')
+                                .form-group.my-2
+                                    input#semail.form-control(type='email' name='semail' aria-describedby='emailHelp' placeholder='Enter valid email' required='')
+                                    p.disp-none.text-danger#email-alert Email already in use in another account
+                                .form-group.my-2
+                                    input#spass.form-control(type='password' name='spass' placeholder='Enter Password' required='')
+                                    p.disp-none.text-danger#pass-alert Passwords doesn't match
+                                .form-group.my-2
+                                    input#cpass.form-control(type='password' name='cpass' placeholder='Confirm Password' required='')
+                                div.my-2
+                                    input#sign-btn.btn.btn-primary(type='submit')
+                            p.disp-none.text-danger#signup-form-alert Please fill all the fields first!!     

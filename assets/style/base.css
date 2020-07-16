@@ -1,0 +1,42 @@
+body::before{
+    content: "";
+    background: url('../assets/images/background.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    z-index: -1;
+    /* top: 0; */
+}
+
+@media (max-height: 565px){
+    body::before{
+        height: 150%;
+    }
+}
+
+.navbar{
+    font-family: 'Abril Fatface', cursive;
+}
+
+.nav-link{
+    font-size: 1.4rem;
+}
+
+.logo a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px 10px 5px;
+}
+
+.logo a span{
+    font-size: 1.4rem;
+}
+
+.logo a img{
+    position: relative;
+    top: -5px;
+    height: 30px;
+    filter: invert(1);
+}
